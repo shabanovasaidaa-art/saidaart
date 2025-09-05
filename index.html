@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Karmik Matris — Saida (AZ)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="container">
+    <h1>Karmik Matris — Saida</h1>
+    <div class="controls">
+      <div class="input"><label for="day">Gün</label><input id="day" type="number" min="1" max="31" value="7"></div>
+      <div class="input"><label for="month">Ay</label><input id="month" type="number" min="1" max="12" value="7"></div>
+      <div class="input"><label for="year">İl</label><input id="year" type="number" min="1" max="9999" value="1995"></div>
+      <button class="btn" id="calc" type="button">Matrisı hesabla</button>
+    </div>
+  </header>
+
+  <main class="board container" aria-label="Saida matrisinin qrafiki">
+    <svg id="canvas" viewBox="0 0 1000 700" role="img" aria-labelledby="title desc">
+      <title id="title">Saida karmatik matrisi</title>
+      <desc id="desc">Ulduz formalı qrafik və düyünlər</desc>
+      <g id="lines" stroke="#d9c8ff" stroke-opacity=".28" stroke-width="3" fill="none" stroke-linecap="round"></g>
+      <g id="nodes"></g>
+    </svg>
+  </main>
+
+  <section class="legend container" aria-label="Cədvəl">
+    <table>
+      <thead>
+      <tr>
+        <th>Yol</th>
+        <th>Çatdırılma sayı (ÇD)</th>
+        <th>Karmik düyün (KÜ)</th>
+      </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </section>
+
+  <footer class="container">
+    © Matris vizualı — AZ lokallaşdırma. Hesablama qaydaları: Saida məktəbinin açıq mənbələrdə yayılan təsvirlərinə uyğun.
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
