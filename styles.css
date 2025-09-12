@@ -157,159 +157,196 @@ body {
 }
 
 /* Matrix Hesablama Section */
- 
+.matrix-section {
+    margin-top: 80px;
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    position: relative;
+    overflow: hidden;
+}
 
- 
-/* Header / Nav */
-.navbar {
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7); /* şəffaf qara */
-    position: fixed;
+.matrix-section::before {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: 1000;
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    color: #fff;
-}
-
-/* Matrix Section */
-.matrix-section {
-    background: rgba(138, 43, 226, 0.2); /* açıq bənövşəyi, şəffaflıq 0.2 */
-    padding: 120px 20px 60px; /* nav-un üstündə boşluq */
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(139,92,246,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
 }
 
 .matrix-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
-.matrix-image .master-photo {
-    width: 350px; /* daha böyük və balanslı */
-    height: 350px;
-    background: rgba(255, 255, 255, 0.2);
+.matrix-image {
+    width: 100%;
+    height: 400px; /* istədiyin hündürlüyü ver */
+    background-size: cover; /* şəkil div-i tam örtür */
+    background-repeat: no-repeat;
+    background-position: top center; /* şəkil üstdən başlayır */
+    border-radius: 12px; /* istəsən şəkil küncləri yumru olsun */
+}
+
+
+.master-photo {
+    width: 350px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 25px 80px rgba(139, 92, 246, 0.4);
+    border: 3px solid rgba(139, 92, 246, 0.6);
+    background: linear-gradient(135deg, #8b5cf6, #f59e0b);
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    border-radius: 15px;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
+    color: white;
+    font-size: 1.3rem;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
 }
 
-.matrix-text {
-    flex: 1;
-    min-width: 320px;
+.master-photo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shine 3s ease-in-out infinite;
 }
-
-.matrix-text h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: #fff;
-}
-
-.matrix-text p {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #eee;
-    margin-bottom: 20px;
-}
-
-.matrix-button {
-    background-color: #6c63ff;
-    color: #fff;
-    padding: 12px 28px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.matrix-button:hover {
-    background-color: #655bf3;
-}
-
-
- 
 
 @keyframes shine {
     0% { left: -100%; }
     100% { left: 100%; }
 }
 
- 
+.matrix-text {
+    color: white;
+}
 
+.matrix-text h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #f59e0b, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+}
+
+.matrix-text p {
+    font-size: 1.3rem;
+    line-height: 1.9;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    color: #e2e8f0;
+}
+.matrix-button {
+    display: inline-block;
+    padding: 12px 28px;             /* Daha balanslı ölçü */
+    font-size: 1rem;                /* Rahat oxunaqlı */
+    font-weight: 600;
+    color: #fff;                     /* Ağ yazı */
+    background: linear-gradient(135deg, #7f00ff, #e100ff); /* Gradient rəng */
+    border: none;
+    border-radius: 8px;             /* Yumru künc */
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.matrix-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #9b00ff, #ff00ff); /* Hover rəng dəyişimi */
+}
+
+.matrix-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobil üçün */
+@media (max-width: 768px) {
+    .matrix-button {
+        padding: 10px 22px;
+        font-size: 0.9rem;
+    }
+}
+
+.matrix-btn {
+    background: linear-gradient(45deg, #f59e0b, #8b5cf6);
+    color: white;
+    padding: 1.3rem 3rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 40px rgba(245, 158, 11, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.matrix-btn:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 15px 50px rgba(245, 158, 11, 0.6);
+}
 
 /* Services Section */
- /* Services Bölməsi */
 .services {
-    padding: 6rem 1.5rem;
+    padding: 8rem 0;
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     position: relative;
 }
 
 .services h2 {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 4rem;
+    font-size: 3.5rem;
+    margin-bottom: 5rem;
     color: #2c3e50;
     position: relative;
-    font-weight: 700;
 }
 
 .services h2::after {
     content: '';
     position: absolute;
-    bottom: -12px;
+    bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
-    height: 4px;
+    width: 120px;
+    height: 5px;
     background: linear-gradient(45deg, #8b5cf6, #f59e0b);
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
-/* Grid Layout */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
 }
 
-/* Kart */
 .service-card {
-    background: #fff;
-    padding: 2.5rem 2rem;
-    border-radius: 20px;
+    background: white;
+    padding: 3.5rem 2.5rem;
+    border-radius: 30px;
     text-align: center;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    transition: all 0.35s ease;
-    border: 1.5px solid transparent;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.12);
+    transition: all 0.5s ease;
     position: relative;
     overflow: hidden;
+    border: 2px solid transparent;
 }
 
-.service-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 50px rgba(139, 92, 246, 0.25);
-    border-color: rgba(139, 92, 246, 0.3);
-}
-
-/* Hover Gradient Effekt */
 .service-card::before {
     content: '';
     position: absolute;
@@ -317,77 +354,75 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.06), rgba(245, 158, 11, 0.06));
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(245, 158, 11, 0.05));
     opacity: 0;
-    transition: opacity 0.35s ease;
+    transition: all 0.4s ease;
 }
 
 .service-card:hover::before {
     opacity: 1;
 }
 
-/* Icon */
+.service-card:hover {
+    transform: translateY(-20px) scale(1.03);
+    box-shadow: 0 40px 100px rgba(139, 92, 246, 0.25);
+    border-color: rgba(139, 92, 246, 0.4);
+}
+
 .service-icon {
-    width: 90px;
-    height: 90px;
+    width: 120px;
+    height: 120px;
     background: linear-gradient(45deg, #8b5cf6, #a855f7);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1.8rem;
-    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+    margin: 0 auto 2.5rem;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.3);
 }
 
 .service-icon i {
-    font-size: 2.2rem;
-    color: #fff;
+    font-size: 3rem;
+    color: white;
 }
 
-/* Başlıq */
 .service-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
     color: #2c3e50;
-    font-weight: 600;
+    z-index: 2;
+    position: relative;
 }
 
-/* Mətn */
 .service-card p {
     color: #64748b;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    font-size: 1rem;
+    line-height: 1.9;
+    margin-bottom: 3rem;
+    font-size: 1.15rem;
+    z-index: 2;
+    position: relative;
 }
 
-/* Button */
 .service-btn {
     background: linear-gradient(45deg, #8b5cf6, #a855f7);
-    color: #fff;
-    padding: 0.9rem 2rem;
+    color: white;
+    padding: 1.2rem 2.5rem;
     border: none;
-    border-radius: 30px;
+    border-radius: 35px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 1rem;
+    z-index: 2;
+    position: relative;
+    font-size: 1.1rem;
 }
 
 .service-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
 }
-
-/* Responsiv düzəlişlər */
-@media (max-width: 768px) {
-    .services h2 {
-        font-size: 2rem;
-    }
-    .service-card {
-        padding: 2rem 1.5rem;
-    }
-}
-
 
 /* About Section */
 .about {
@@ -396,36 +431,70 @@ body {
     position: relative;
 }
 
+ 
+ .about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    object-fit: cover; /* şəkli container daxilində saxlayır */
+    max-height: 400px; /* maksimum hündürlük veririk */
+}
+
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 6rem;
-    align-items: center;
-}
-
-.about-image {
-    position: relative;
-}
-
-.about-photo {
-    width: 400px;
-    height: 500px;
-    object-fit: cover;
-    border-radius: 30px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
-    border: 3px solid rgba(139, 92, 246, 0.3);
-    background: linear-gradient(135deg, #8b5cf6, #f59e0b);
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.3rem;
-    margin: 0 auto;
+    gap: 2rem;
 }
+
+.about-text {
+    flex: 1 1 55%;
+    min-width: 250px;
+    z-index: 1; /* mətn şəkilin üstündə çıxmamalıdır */
+}
+
+/* Mobil üçün */
+/* Mobil üçün */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center; /* elementləri mərkəzə gətirir */
+        text-align: center; /* mətn mərkəzdə */
+    }
+
+    .about-text h2 {
+        width: fit-content; /* underline xətti mətnin uzunluğu ilə uyğunlaşsın */
+        margin: 0 auto; /* mərkəzləşdirir */
+        position: relative;
+    }
+
+    .about-text h2::after {
+        content: '';
+        display: block;
+        width: 50%; /* xəttin uzunluğu */
+        height: 2px;
+        background-color: #f39c12; /* xətt rəngi */
+        margin: 0 auto; /* xətti mərkəzləşdirir */
+        margin-top: 0.5rem; /* başlıqdan aşağı məsafə */
+    }
+
+    .about-text p {
+        max-width: 90%;
+        margin: 0.5rem auto 0 auto;
+    }
+
+    .about-image {
+        max-width: 90%;
+    }
+}
+
+
+
 
 .about-text h2 {
-    font-size: 28px; /* böyük başlığı normal ölçüyə endirir */
-    margin-bottom: 15px; /* başlıq ilə mətn arasında boşluq */
+    font-size: 3.5rem;
+    margin-bottom: 2.5rem;
     color: #2c3e50;
     position: relative;
 }
@@ -450,28 +519,24 @@ body {
 
 .about-stats {
     display: flex;
-    flex-wrap: wrap; /* kiçik ekranlarda alt-alta düşsün */
-    gap: 1.5rem; /* bloklar arasında boşluq */
-    margin-top: 2rem; /* çox böyük boşluğu azaldır */
-    justify-content: center; /* mərkəzləşdir */
+    gap: 2.5rem;
+    margin-top: 4rem;
 }
 
 .stat-item {
     text-align: center;
-    padding: 1.5rem 1rem; /* paddingi bir az azaltdıq */
+    padding: 2.5rem 2rem;
     background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-    border-radius: 20px; /* radiusu azaldıb daha zərif etdik */
-    flex: 1 1 150px; /* minimum genişlik 150px, responsive üçün */
-    max-width: 250px; /* çox geniş olmaması üçün */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* daha yumşaq kölgə */
-    transition: all 0.3s ease; /* daha hamar keçid */
+    border-radius: 25px;
+    flex: 1;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
 }
 
 .stat-item:hover {
-    transform: translateY(-5px); /* hover effekti */
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(139, 92, 246, 0.15);
 }
-
 
 .stat-number {
     display: block;
@@ -517,21 +582,24 @@ body {
 
 .certificate-carousel {
     position: relative;
-    max-width: 800px;
+    max-width: 600px; /* istəyə görə dəyiş */
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .certificate-wrapper {
-    overflow: hidden;
-    border-radius: 30px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+    display: flex;
+    transition: transform 0.5s ease;
 }
+
 
 .certificate-slide {
-    display: none;
-    animation: slideIn 0.6s ease-in-out;
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 .certificate-slide.active {
     display: block;
 }
@@ -549,15 +617,24 @@ body {
 
 .certificate-img {
     width: 100%;
-    height: 600px;
-    object-fit: cover;
-    background: linear-gradient(135deg, #8b5cf6, #f59e0b);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.8rem;
-    font-weight: bold;
+    max-width: 500px;
+    height: 300px; /* SABİT hündürlük */
+    margin: 0 auto;
+}
+
+.certificate-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* şəkil tam sığsın, kəsilməsin */
+    border-radius: 10px;
+    display: block;
+}
+
+/* Mobil üçün */
+@media (max-width: 768px) {
+    .certificate-img {
+        max-width: 90%; /* mobil ekranda tam yer tutsun */
+    }
 }
 
 .carousel-nav {
@@ -1390,6 +1467,13 @@ body {
         height: 280px;
     }
     
+    .profile-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
     .about-photo {
         width: 250px;
         height: 320px;
@@ -1480,4 +1564,103 @@ body {
         image-rendering: -webkit-optimize-contrast;
         image-rendering: crisp-edges;
     }
+}
+
+/* new */
+
+
+
+
+.certificates-new {
+    padding: 50px 0;
+    background: #f7f7f7;
+}
+
+.certificates-new h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.certificate-carousel-new {
+    position: relative;
+    overflow: hidden;
+}
+
+.certificate-wrapper-new {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.certificate-slide-new {
+    min-width: 100%;
+    flex-shrink: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.certificate-slide-new.active {
+    opacity: 1;
+}
+
+.certificate-slide-new img {
+    width: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+/* Nav buttons */
+.carousel-nav-new button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 5px;
+    user-select: none;
+}
+
+.prev-btn-new { left: 10px; }
+.next-btn-new { right: 10px; }
+
+/* Dots */
+.carousel-dots-new {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dot-new {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot-new.active {
+    background: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel-nav-new button { font-size: 1.5rem; }
+}
+.certificates-swiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.certificates-swiper img {
+    width: 100%; /* Slide tam görünür */
+    height: auto;
+    object-fit: contain;
 }
