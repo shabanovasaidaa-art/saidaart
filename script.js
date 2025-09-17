@@ -54,19 +54,19 @@ function calcKnots(A, B, V){
 
 /* ==== Layout (ulduz / simmetrik) ==== */
 const layout = {
-  B:[500,90],   // üst nöqtə (7)
-  J:[500,180],  // J - çd3 (yuxarı ortada)
-  D:[160,260],  // sol yuxarı
-  I:[320,320],  // sol orta yuxarı
-  A:[200,520],  // sol aşağı
-  M:[320,420],  // sol orta aşağı
-  E:[500,620],  // bottom (9)
-  N:[500,520],  // N (KÜ5) biraz yuxarı bottom
-  G:[500,340],  // mərkəz (özünüreallaşdırma)
-  K:[680,320],  // sağ orta yuxarı
-  V:[800,520],  // sağ aşağı
-  L:[680,420],  // sağ orta aşağı
-  Z:[840,260]   // sağ yuxarı
+  B:[500,60],   // üst nöqtə (7)
+  J:[500,200],  // J - çd3 (yuxarı ortada)
+  D:[200,200],  // sol yuxarı
+  I:[350,270],  // sol orta yuxarı
+  A:[200,500],  // sol aşağı
+  M:[340,430],  // sol orta aşağı
+  E:[500,700],  // bottom (9)
+  N:[500,500],  // N (KÜ5) biraz yuxarı bottom
+  G:[500,350],  // mərkəz (özünüreallaşdırma)
+  K:[660,430],  // sağ orta yuxarı
+  V:[800,500],  // sağ aşağı
+  L:[660,270],  // sağ orta aşağı
+  Z:[800,200]   // sağ yuxarı
 };
 
 /* ==== DOM referansları ==== */
@@ -82,11 +82,10 @@ function drawSkeleton(){
   const mkPath = (pts)=> `M ${pts.map(([x,y])=>`${x},${y}`).join(' L ')}`;
 
   const lineSets = [
-    [p.B,p.I,p.E,p.L,p.Z,p.K,p.J,p.B],    // ulduzun dairəvi bağlantıları
-    [p.A,p.M,p.G,p.K,p.V],                // alt-orta xəttlər
-    [p.D,p.J,p.Z],                        // sol yuxarı üçbucaq
-    [p.I,p.G,p.K],                        // orta üçbucaq
-    [p.M,p.G,p.L]                         // alt üçbucaq
+    [p.B,p.L,p.V,p.A,p.I,p.B,p.J,p.G,p.N,p.E],    // ulduzun dairəvi bağlantıları                // alt-orta xəttlər
+    [p.D,p.J,p.Z,p.E,p.D],                        // sol yuxarı üçbucaq
+    [p.A,p.M,p.G,p.L,p.Z],                        // orta üçbucaq
+    [p.D,p.I,p.G,p.K,p.V]                         // alt üçbucaq
   ];
 
   lineSets.forEach(pts=>{
