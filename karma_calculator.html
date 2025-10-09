@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <html lang="az">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Karmik Matris — Saida (AZ)</title>
+  <title>Karmik Matris</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+
+<body class="cal-body"> <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <i class="fa-solid fa-star"></i>
+        Master Of Numbers
+      </div>
+      <div class="nav-menu">
+        <a href="./index.html" class="nav-link">Ana Səhifə</a>
+        <a href="./karma_calculator.html" class="nav-link">Xidmətlər</a>
+        <a href="#about" class="nav-link">Haqqımızda</a>
+        <a href="#certificates" class="nav-link">Sertifikatlar</a>
+        <a href="#contact" class="nav-link">Əlaqə</a>
+      </div>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
   <header class="container">
-    <h1>Karmik Matris — Saida</h1>
+
     <div class="controls">
-      <div class="input"><label for="day">Gün</label><input id="day" type="number" min="1" max="31" value="7"></div>
-      <div class="input"><label for="month">Ay</label><input id="month" type="number" min="1" max="12" value="7"></div>
-      <div class="input"><label for="year">İl</label><input id="year" type="number" min="1" max="9999" value="1995"></div>
+      <div class="input"><label for="day">Gün</label><input id="day" type="number" min="1" max="31" placeholder="Gün"
+          value=""></div>
+      <div class="input"><label for="month">Ay</label><input id="month" type="number" min="1" max="12" placeholder="Ay"
+          value=""></div>
+      <div class="input"><label for="year">İl</label><input id="year" type="number" min="1" max="9999" placeholder="İl"
+          value=""></div>
       <button class="btn" id="calc" type="button">Matrisı hesabla</button>
     </div>
   </header>
@@ -29,23 +59,61 @@
     </svg>
   </main>
 
-  <section class="legend container" aria-label="Cədvəl">
+  <section class="legend container " style="margin-bottom: 50px;" aria-label="Cədvəl">
     <table>
       <thead>
-      <tr>
-        <th>Yol</th>
-        <th>Çatdırılma sayı (ÇD)</th>
-        <th>Karmik düyün (KÜ)</th>
-      </tr>
+        <tr>
+          <th>Yol</th>
+          <th>Seidenin kefi ne istese (ÇD)</th>
+          <th>Karmik düyün (KÜ)</th>
+        </tr>
       </thead>
       <tbody id="rows"></tbody>
     </table>
   </section>
 
-  <footer class="container">
-    © Matris vizualı — AZ lokallaşdırma. Hesablama qaydaları: Saida məktəbinin açıq mənbələrdə yayılan təsvirlərinə uyğun.
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Mene Master Of Numbers</h3>
+          <p>Matrix numerologiyası və həyat kodları ilə gələcəyinizi kəşf edin. Peşəkar məsləhətçi xidmətləri
+            və şəxsi konsultasiyalar.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Sosial Şəbəkələr</h4>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Xidmətlər</h4>
+          <p><i class="fas fa-check"></i> Matrix Hesablama</p>
+          <p><i class="fas fa-check"></i> Doğum Xəritəsi</p>
+          <p><i class="fas fa-check"></i> Karyera Analizi</p>
+          <p><i class="fas fa-check"></i> Münasibət Uyğunluğu</p>
+        </div>
+        <div class="footer-section">
+          <h4>Əlaqə</h4>
+          <p><i class="fas fa-phone"></i> +994 50 123 45 67</p>
+          <p><i class="fas fa-envelope"></i> info@menemaster.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Bakı, Azərbaycan</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Mene Master Of Numbers. Bütün hüquqlar qorunur.</p>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js" defer></script>
+  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 </body>
+
 </html>
