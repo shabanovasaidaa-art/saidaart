@@ -2,118 +2,211 @@
 <html lang="az">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Karmik Matris</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Karmik matris kalkulyatoru - Doğum tarixinizə əsasən numerologiya analizi">
+  <title>Karmik Xəritə Kalkulyatoru | Səidə Şabanova</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="cal-body"> <!-- Navigation -->
+<body class="cal-body">
+
+  <!-- NAVİGASİYA -->
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        <i class="fa-solid fa-star"></i>
-        Master Of Numbers
+        Səidə Şabanova
       </div>
       <div class="nav-menu">
         <a href="./index.html" class="nav-link">Ana Səhifə</a>
-        <a href="./karma_calculator.html" class="nav-link">Xidmətlər</a>
-        <a href="#about" class="nav-link">Haqqımızda</a>
-        <a href="#certificates" class="nav-link">Sertifikatlar</a>
-        <a href="#contact" class="nav-link">Əlaqə</a>
+        <a href="./index.html#services" class="nav-link">Xidmətlər</a>
+        <a href="./index.html#about" class="nav-link">Haqqımda</a>
+        <a href="./index.html#certificates" class="nav-link">FAQ</a>
+        <a href="./index.html#contact" class="nav-link">Əlaqə</a>
       </div>
-      <div class="hamburger">
+      <div class="hamburger" id="hamburger">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </div>
     </div>
   </nav>
+
+  <!-- KALKULYATOR BAŞLIĞI -->
   <header class="container">
+    <h1>Karmik Xəritə Kalkulyatoru</h1>
+    <p class="subtitle">Doğum tarixinizi daxil edərək karmik matrisinizi hesablayın</p>
 
     <div class="controls">
-      <div class="input"><label for="day">Gün</label><input id="day" type="number" min="1" max="31" placeholder="Gün"
-          value=""></div>
-      <div class="input"><label for="month">Ay</label><input id="month" type="number" min="1" max="12" placeholder="Ay"
-          value=""></div>
-      <div class="input"><label for="year">İl</label><input id="year" type="number" min="1" max="9999" placeholder="İl"
-          value=""></div>
-      <button class="btn" id="calc" type="button">Matrisı hesabla</button>
+      <div class="input">
+        <label for="day">Gün</label>
+        <input id="day" type="number" min="1" max="31" placeholder="01" aria-label="Doğum günü" required>
+      </div>
+
+      <div class="input">
+        <label for="month">Ay</label>
+        <input id="month" type="number" min="1" max="12" placeholder="01" aria-label="Doğum ayı" required>
+      </div>
+
+      <div class="input">
+        <label for="year">İl</label>
+        <input id="year" type="number" min="1900" max="2025" placeholder="1990" aria-label="Doğum ili" required>
+      </div>
+
+      <button class="btn" id="calc" type="button">
+        <i class="fas fa-calculator"></i>
+        Xəritəni hesabla
+      </button>
     </div>
   </header>
 
-  <main class="board container" aria-label="Saida matrisinin qrafiki">
-    <svg id="canvas" viewBox="0 0 1000 700" role="img" aria-labelledby="title desc">
-      <title id="title">Saida karmatik matrisi</title>
-      <desc id="desc">Ulduz formalı qrafik və düyünlər</desc>
-      <g id="lines" stroke="#d9c8ff" stroke-opacity=".28" stroke-width="3" fill="none" stroke-linecap="round"></g>
+  <!-- MATRİS QRAFIKI -->
+  <main class="board container" aria-label="Karmik matris qrafiki">
+    <svg id="canvas" viewBox="0 0 1000 700" role="img" aria-labelledby="matrixTitle matrixDesc">
+      <title id="matrixTitle">Karmik Matris Diaqramı</title>
+      <desc id="matrixDesc">Doğum tarixinə əsasən hesablanmış ulduz formalı numerologiya xəritəsi</desc>
+      <g id="lines" stroke="#d9c8ff" stroke-opacity="0.28" stroke-width="3" fill="none" stroke-linecap="round"></g>
       <g id="nodes"></g>
     </svg>
   </main>
 
-  <section class="legend container " style="margin-bottom: 50px;" aria-label="Cədvəl">
-    <table>
-      <thead>
-        <tr>
-          <th>Yol</th>
-          <th>Seidenin kefi ne istese (ÇD)</th>
-          <th>Karmik düyün (KÜ)</th>
-        </tr>
-      </thead>
-      <tbody id="rows"></tbody>
-    </table>
+  <!-- NƏTİCƏLƏR CƏDVƏLİ -->
+  <section class="legend container" aria-label="Numerologiya nəticələri cədvəli">
+    <h2 class="table-title">Analiz Nəticələri</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Həyat yolu</th>
+            <th scope="col">Uğur Sayı</th>
+            <th scope="col">Karmik Dərs</th>
+          </tr>
+        </thead>
+        <tbody id="rows">
+          <!-- JavaScript ilə doldurulacaq -->
+        </tbody>
+      </table>
+    </div>
   </section>
 
+  <!-- İZAHLAR SEKSİYASI (Optional) -->
+  <section class="info-section container">
+    <div class="info-card">
+      <div class="info-icon">
+        <i class="fas fa-info-circle"></i>
+      </div>
+      <div class="info-content">
+        <h3>Nəticələri necə başa düşmək olar?</h3>
+        <p>
+          Hər bir rəqəm həyatınızda aktiv olan enerjiləri və fərdi keyfiyyətlərinizi əks etdirir. Xarakterinizin
+          güclü tərəflərini, bacarıqlarınızı və daxili potensialınızı üzə çıxarır. Karmik dərs isə üzərində işləməli
+          olduğunuz və sizi inkişaf etdirən əsas həyat dərslərinizdir.
+        </p>
+      </div>
+    </div>
 
-  <!-- Footer -->
+    <div class="cta-box">
+      <h3>Ətraflı Analiz İstəyirsiniz?</h3>
+      <p>Peşəkar konsultasiya üçün bizimlə əlaqə saxlayın</p>
+      <a href="./index.html#contact" class="matrix-button">
+        <i class="fas fa-envelope"></i>
+        Əlaqə Saxla
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
+
+        <!-- Haqqında -->
         <div class="footer-section">
-          <h3>Mene Master Of Numbers</h3>
-          <p>Matrix numerologiyası və həyat kodları ilə gələcəyinizi kəşf edin. Peşəkar məsləhətçi xidmətləri
-            və şəxsi konsultasiyalar.</p>
+          <h3>Səidə Şabanova</h3>
+          <p>
+           Peşəkar xidmətlər və fərdi konsultasiyalarla öz həyat yolunuzu kəşf edin. Doğum xəritənizdəki şifrələri öyrənməklə həyatınızı dəyişin.
+          </p>
         </div>
+
+        <!-- Sosial Şəbəkələr -->
         <div class="footer-section">
           <h4>Sosial Şəbəkələr</h4>
           <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/psychonumerology.az" class="social-link" target="_blank"
+              rel="noopener noreferrer" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/994706242496" class="social-link" target="_blank" rel="noopener noreferrer"
+              aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://t.me/psychonumerology_az" class="social-link" target="_blank" rel="noopener"
+              aria-label="Telegram">
+              <i class="fab fa-telegram"></i>
+            </a>
+            <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
           </div>
         </div>
+
+        <!-- Xidmətlər -->
         <div class="footer-section">
           <h4>Xidmətlər</h4>
-          <p><i class="fas fa-check"></i> Matrix Hesablama</p>
-          <p><i class="fas fa-check"></i> Doğum Xəritəsi</p>
-          <p><i class="fas fa-check"></i> Karyera Analizi</p>
-          <p><i class="fas fa-check"></i> Münasibət Uyğunluğu</p>
+          <ul class="footer-services">
+            <li><i class="fas fa-check"></i> Karmik numerologiya analizi</li>
+            <li><i class="fas fa-check"></i> Münasibət analizi</li>
+            <li><i class="fas fa-check"></i> İllik proqnozun hesablanması</li>
+            <li><i class="fas fa-check"></i> Pul və karyera analizi</li>
+            <li><i class="fas fa-check"></i> Uşaqların numeroloji analizi</li>
+          </ul>
         </div>
+
+        <!-- Əlaqə -->
         <div class="footer-section">
           <h4>Əlaqə</h4>
-          <p><i class="fas fa-phone"></i> +994 50 123 45 67</p>
-          <p><i class="fas fa-envelope"></i> info@menemaster.com</p>
-          <p><i class="fas fa-map-marker-alt"></i> Bakı, Azərbaycan</p>
+          <ul class="footer-contact">
+            <li>
+              <i class="fas fa-phone"></i>
+              <a href="tel:+994706242496">+994 70 624 24 96</a>
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              Bakı, Azərbaycan
+            </li>
+
+          </ul>
         </div>
+
       </div>
+
+      <!-- Copyright -->
       <div class="footer-bottom">
-        <p>&copy; 2024 Mene Master Of Numbers. Bütün hüquqlar qorunur.</p>
+        <p>
+          Copyright &copy; 2026 Bütün hüquqlar qorunur. <br>
+          <span>Elmar Guluzade</span> —
+          <a href="https://www.linkedin.com/notifications/?filter=all" target="_blank">
+            LinkedIn
+          </a>
+        </p>
       </div>
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <!-- JavaScript Faylları -->
+  <script src="script.js"></script>
   <script src="main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
 </body>
 
 </html>

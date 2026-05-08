@@ -14,7 +14,11 @@ function arkanOfDay(day) {
 }
 
 const arkanOfMonth = (m) => clampArc(Number(m) || 7);
-const arkanOfYear = (y) => clampArc(String(y || 1991).split('').reduce((a, d) => a + +d, 0));
+const arkanOfYear = (y) => clampArc(
+  String(y || 1991)
+    .split('')
+    .reduce((sum, digit) => sum + parseInt(digit, 10), 0)
+);
 const selfRealization = (A, B, V) => clampArc(A + B + V);
 
 /* ==== Hesablamalar ==== */
@@ -22,10 +26,11 @@ function calcAchievements(A, B, V) {
   const D = clampArc(A + B);
   const E = clampArc(A + V);
   const J = clampArc(D + E);
-  const Z = clampArc(Math.abs(E - Math.abs(A - B)));
+  const Z = clampArc(B + V);  // ✅ Z = B + V (Ay + İl)
 
   return { D, E, J, Z };
 }
+
 
 /* ==== SİZİN XÜSUSI METODUNUZla karmik düyünlər ==== */
 function calcKnots(A, B, V) {
@@ -119,19 +124,19 @@ function node(colorVar, code, label, value) {
 
   // Rəng təyini
   let fillColor = '#f0f0f0';
-  if (colorVar === '--mid') fillColor = '#4a90e2';      // əsas arklar - mavi
-  if (colorVar === '--good') fillColor = '#27ae60';     // çatdırılmalar - yaşıl
-  if (colorVar === '--warn') fillColor = '#e74c3c';     // karmik düyünlər - qırmızı
+  if (colorVar === '--mid') fillColor = '#f0c467ff';      // əsas arklar - mavi
+  if (colorVar === '--good') fillColor = '#659f64ff';     // çatdırılmalar - yaşıl
+  if (colorVar === '--warn') fillColor = '#d83843ff';     // karmik düyünlər - qırmızı
 
   c.setAttribute('fill', fillColor);
-  c.setAttribute('stroke', 'rgba(255,255,255,0.8)');
+  c.setAttribute('stroke', '#ffffff9e');
   c.setAttribute('stroke-width', '2');
 
   // Rəqəm mətni
   const t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
   t.setAttribute('text-anchor', 'middle');
   t.setAttribute('dy', '6');
-  t.setAttribute('fill', 'white');
+  t.setAttribute('fill', 'black');
   t.setAttribute('font-weight', 'bold');
   t.setAttribute('font-size', '16');
   t.textContent = value;
@@ -141,7 +146,7 @@ function node(colorVar, code, label, value) {
   tag.setAttribute('class', 'tag');
   tag.setAttribute('text-anchor', 'middle');
   tag.setAttribute('dy', '-45');
-  tag.setAttribute('fill', '#333');
+  tag.setAttribute('fill', '#403333ff');
   tag.setAttribute('font-weight', '500');
   tag.setAttribute('font-size', '12');
   tag.textContent = label;
@@ -179,16 +184,16 @@ function render(A, B, V, G, ach, kn) {
 
   // cədvəl yenilə
   if (rows) rows.innerHTML = `
-    <tr><td>A. Gün Arkani <span class="pill">${A}</span></td>
+    <tr><td>A. Gün Arkanı <span class="pill">${A}</span></td>
         <td>D. ÇD1 <span class="pill">${ach.D}</span></td>
         <td>İ. KÜ1 <span class="pill">${kn.I}</span></td></tr>
-    <tr><td>B. Ay Arkani <span class="pill">${B}</span></td>
+    <tr><td>B. Ay Arkanı <span class="pill">${B}</span></td>
         <td>E. ÇD2 <span class="pill">${ach.E}</span></td>
         <td>K. KÜ2 <span class="pill">${kn.K}</span></td></tr>
-    <tr><td>V. İl Arkani <span class="pill">${V}</span></td>
+    <tr><td>V. İl Arkanı <span class="pill">${V}</span></td>
         <td>J. ÇD3 <span class="pill">${ach.J}</span></td>
         <td>L. KÜ3 <span class="pill">${kn.L}</span></td></tr>
-    <tr><td>G. Özünüreallaşdırma <span class="pill">${G}</span></td>
+    <tr><td>G. Missiya <span class="pill">${G}</span></td>
         <td>Z. ÇD4 <span class="pill">${ach.Z}</span></td>
         <td>M. KÜ4 <span class="pill">${kn.M}</span></td></tr>
     <tr><td colspan="2"></td>

@@ -4,31 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Of Numbers - Numerologiya</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <meta name="description" content="Səidə Şabanova - Rəqəmsal psixologiya və numerologiya xidmətləri">
+    <meta name="keywords" content="numerologiya, karmik xəritə, psixologiya, Azərbaycan">
+    <title>Səidə Şabanova - Numerologiya Mütəxəssisi</title>
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Swiper CSS (yalnız bir versiya) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Öz CSS faylınız -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!-- Navigation -->
+    <!-- NAVİGASİYA -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-                <i class="fa-solid fa-star"></i>
-                Master Of Numbers
+               
+                Səidə Şabanova
             </div>
             <div class="nav-menu">
                 <a href="#home" class="nav-link">Ana Səhifə</a>
-                <a href="./karma_calculator.html" class="nav-link">Xidmətlər</a>
-                <a href="#about" class="nav-link">Haqqımızda</a>
-                <a href="#certificates" class="nav-link">Sertifikatlar</a>
+                <a href="#services" class="nav-link">Xidmətlər</a>
+                <a href="#about" class="nav-link">Haqqımda</a>
+                <a href="#certificates" class="nav-link">FAQ</a>
                 <a href="#contact" class="nav-link">Əlaqə</a>
             </div>
-            <div class="hamburger">
+            <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -36,242 +41,410 @@
         </div>
     </nav>
 
-    <!-- Matrix Hesablama Section -->
+
+    <!-- ANA SƏHİFƏ / HİRO SEKSİYA -->
     <section id="home" class="matrix-section">
         <div class="container">
             <div class="matrix-content">
-                <div class="matrix-image"
-                    style="background-image: url('./img/WhatsApp\ Image\ 2025-09-12\ at\ 01.55.27_03d1c432.jpg');">
-                    <!-- Artıq <img> lazım deyil -->
+                <div class="matrix-image" style="background-image: url('./img/1.jpeg');" role="img"
+                    aria-label="Səidə Şabanova profil şəkli">
                 </div>
                 <div class="matrix-text">
-                    <h2>Matrix Hesablama</h2>
-                    <p>Xəritənizə əsaslanaraq həyatınızın bütün sahələri ilə bağlı geniş və əhatəli məlumat əldə
-                        edirsiniz.
-
-                        Münasibətləriniz, karyera yolunuz, uğurlu ola biləcəyiniz sahələr və peşələr, həyat missiyanız
-                        və potensialınız haqqında aydın təsvir verilir.
-
-                        Güclü və zəif tərəfləriniz, həyatınızda təkrar olunan karmik döngülər, öyrənməli olduğunuz
-                        dərslər və həyatınıza istiqamət verən əsas mesajlar açıqlanır.
-
-                        Bu analiz, sanki həyat yolunuzun kompası kimi sizə istiqamət göstərir..</p>
-                    <a href="./karma_calculator.html" class="matrix-button">Matrix Hesabla</a>
+                    <h1>Həyatını dəyişdirməyə özünü tanımaqdan başla!</h1>
+                    <p>
+                        Hər insan bu dünyaya bir missiya ilə gəlir, yaşadığın heçnə təsadüfi deyil. Doğum tarixin təkcə
+                        rəqəmlərdən ibarət deyil –
+                        o həm də sənin həyatdakı yol xəritəndir.
+                    </p>
+                    <p>
+                        Karmik xəritən sənə öz həyat yolunu tanımağa, ruhunun missiyasını öyrənməyə və
+                        həyatdakı dərslərini anlamağa kömək edir.
+                    </p>
+                    <p><strong>ÖZ XƏRİTƏNİ İNDİ KƏŞF ET!</strong></p>
+                    <a href="./karma_calculator.html" class="matrix-button">Karmik xəritəni hesabla</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services  ">
-        <div class="container  services-container">
+    <!-- XİDMƏTLƏR SEKSİYASI -->
+    <section id="services" class="services">
+        <div class="container services-container">
             <h2>Xidmətlərimiz</h2>
             <div class="services-grid">
-                <div class="service-card">
+
+                <!-- Xidmət 1 -->
+                <article class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-briefcase"></i>
                     </div>
-                    <h3>Karmik numerologiya analizi
-                    </h3>
-                    <p>Xəritənizə əsaslanaraq həyatınızın bütün sahələri ilə bağlı geniş və əhatəli məlumat əldə
-                        edirsiniz.
+                    <h3>Karmik Numerologiya Analizi</h3>
+                    <p>
+                        Doğum tarixinizə əsaslanan bu dərin analiz ilə həyatınızın bütün sahələri barədə geniş məlumat
+                        əldə edə bilərsiniz. İnsanın xarakterini, həyat dərslərini, güclü və kölgə tərəflərini,
+                        potensialını göstərən numeroloji sistemdir. Taleyinizdəki təkrarlanan hadisələrin səbəblərini
+                        öyrənəcək, sevgi və karyera yolunda sizi uğura aparacaq addımları kəşf edəcəksiniz. Öz həyat
+                        missiyanızı dərk edərək gələcəyinizi daha şüurlu və uğurlu şəkildə inşa edin.
+                    </p>
 
-                      </p>
-                    <button class="service-btn">Ətraflı Məlumat</button>
-                </div>
-                <div class="service-card">
+                </article>
+
+                <!-- Xidmət 2 -->
+                <article class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-heart"></i>
-
-
                     </div>
-                    <h3>Cütlük analizi
-                    </h3>
-                    <p>Münasibətlərdə yaşanan problemlərin kökləri və onların həlli yolları üzə çıxarılır.
+                    <h3>Münasibət Analizi</h3>
+                    <p>
+                        Sizin və partnyorunuzun doğum tarixləri əsasında hazırlanan bu fərdi analiz partnyorunuzla nə
+                        dərəcədə uyğun olduğunuzu və evlilik potensialınızı üzə çıxarır. Analiz vasitəsilə münasibətdəki
+                        problemlərin səbəblərini və həll yollarını öyrənəcək, bir-birinizin sevgi dilini kəşf edərək
+                        daha sağlam ünsiyyət quracaqsınız. Bu analiz həm özünüzü, həm də qarşı tərəfi dərindən tanımaqla
+                        daha şüurlu və xoşbəxt bir münasibət yaşamağınıza kömək edəcək.
+                    </p>
 
-                        Siz və partnerinizin bir-birinizə uyğunluq dərəcəsi, evlilik üçün uyğunluq və münasibətin
-                        gələcək potensialı araşdırılır.
+                </article>
 
-                      </p>
-                    <button class="service-btn">Ətraflı Məlumat</button>
-                </div>
-                <div class="service-card">
+                <!-- Xidmət 3 -->
+                <article class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>İllik proqnoz analizi
-                    </h3>
-                    <p>Doğum tarixinə əsasən ilin hər ayı üçün xüsusi enerji xəritəsi hazırlanır.
+                    <h3>İllik Proqnoz Analizi</h3>
+                    <p>
+                        ​İllik proqnoz analizi sizin doğum tarixiniz əsasında, xüsusi metodologiya ilə hesablanır. Bu
+                        analiz vasitəsilə il ərzində hansı enerjilərin ön planda olacağını, sizi hansı fürsət və
+                        çətinliklərin gözlədiyini öyrənəcəksiniz. Münasibətlər və maliyyə sahəsindəki gözləntilər,
+                        həmçinin sizi uğura aparacaq addımlar barədə bütün suallara cavab tapacaqsınız. İllik proqnoz
+                        analizi sizin üçün fərdi bir bələdçidir.
+                    </p>
 
-                        Bu xəritə vasitəsilə ilin hansı aylarında fürsətlərin, hansı dövrlərdə isə çətinliklərin ola
-                        biləcəyi aydın görünür.
+                </article>
 
-                       </p>
-                    <button class="service-btn">Ətraflı Məlumat</button>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- HAQQIMDA SEKSİYASI -->
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
-                 <div class="about-text">
+                <div class="about-text">
                     <h2>Haqqımda</h2>
-                    <p>Salam, mən Mene - Master Of Numbers, numerologiya və matrix hesablamaları sahəsində ixtisaslaşmış
-                        məsləhətçiyəm. Uzun illərdir insanlara həyatlarında doğru yolu tapmaqda və özlərini daha yaxşı
-                        tanımaqda kömək edirəm.</p>
+                    <p>
+                        Mən Səidə Şabanova — psixonumerologiya və rəqəmsal psixologiya sahəsində fəaliyyət göstərən
+                        mütəxəssisəm. Psixonumerologiyada hər bir rəqəm özünəməxsus arxetipik enerji daşıyır və hər bir
+                        insanın doğum tarixində onun həyat yolu və daxili potensialını əks etdirən həyat şifrələri
+                        mövcuddur.
+                    </p>
+                    <p>
+                        Məqsədim sizi bu şifrələrlə tanış etmək, rəqəmlərin dili ilə daxili dünyanızı, şüuraltı davranış
+                        modellərinizi, gizli potensialınızı və bu həyatda daşıdığınız missiyanı kəşf etməyinizə dəstək
+                        olmaqdır.
+                    </p>
+                    <p>
+                        Eyni zamanda illər ərzində şəxsi inkişaf, psixologiya sahəsində qazandığım biliklər, NLP
+                        (Neyro-Linqvistik Proqramlaşdırma) metodlarını və təcrübəmi birləşdirərək, insanlara öz daxili
+                        gücünü kəşf etməyə, kölgə yanlarını dərk etməyə və həyatdakı çətinlikləri fürsətə çevirməyə
+                        kömək edirəm.
+                    </p>
+                    <p>
+                        Hər bir insan dəyişmək və inkişaf etmək üçün lazım olan bütün resurslara sahibdir. Mənim rolum
+                        bu resursları üzə çıxarmaq, özünüzü daha dərindən tanıma yolunda sizə bələdçilik etməkdir.
+                    </p>
+                    <p>
+                        İndiyə qədər apardığım yüzlərlə fərdi xəritə analizi, hər bir insanın həyat yolunun nə qədər
+                        fərqli və unikal olduğunu göstərib. Sizin üçün ən doğru istiqaməti müəyyən etmək üçün gəlin bu
+                        inkişaf yolunu birlikdə addımlayaq!
+                    </p>
                 </div>
                 <div class="about-image">
-                    <div class="about-photo">
-                        <img src="./img/WhatsApp Image 2025-09-12 at 01.48.05_138ff4ff.jpg" alt="Haqqımda şəkil" />
-                    </div>
+                    <img src="./img/2.jpeg" alt="Səidə Şabanova - Numerologiya mütəxəssisi" class="about-photo">
                 </div>
-               
             </div>
         </div>
     </section>
-
-
-    <!-- Certificates Carousel -->
-    <!-- <section id="certificates" class="certificates">
-    <div class="container">
-        <h2>Sertifikatlar</h2>
-        <div class="certificate-carousel">
-            <div class="certificate-wrapper">
-                <div class="certificate-slide active">
-                    <div class="certificate-img">
-                        <img src="./img/Serfikat-1.jpg" alt="Sertifikat 1">
-                    </div>
-                </div>
-                <div class="certificate-slide">
-                    <div class="certificate-img">
-                        <img src="./img/Sertfikat-2.jpg" alt="Sertifikat 2">
-                    </div>
-                </div>
-               
-            </div>
-            <div class="carousel-nav">
-                <button class="nav-btn prev-btn">❮</button>
-                <button class="nav-btn next-btn">❯</button>
-            </div>
-            <div class="carousel-dots">
-                <span class="dot active" data-slide="0"></span>
-                <span class="dot" data-slide="1"></span>
-               
-            </div>
-        </div>
-    </div>
-</section>  -->
-
-    <section id="certificates" class="certificates">
+    <!-- FAQ SEKSİYASI -->
+    <section id="certificates" class="faq-section">
         <div class="container">
-            <h2>Sertifikatlar</h2>
+            <h2>Tez-tez Verilən Suallar</h2>
 
-            <!-- Yeni Swiper carousel -->
-            <div class="swiper certificates-swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="./img/Serfikat-1.jpg" alt="Sertifikat 1">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./img/Sertfikat-2.jpg" alt="Sertifikat 2">
-                    </div>
+            <div class="faq-container">
 
+                <!-- Sual 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Karmik numerologiya xəritəsi nədir?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Karmik numerologiya xəritəsi insanın doğum tarixinə əsaslanaraq hazırlanmış özünü və həyat
+                            yolunu dərindən anlamaq üçün unikal bir sistemdir. Bu xəritə insanın karmik dərslərini,
+                            güclü və zəif tərəflərini, istedadlarını və həyatda gəlməli olduğu missiyanı göstərir.</p>
+                    </div>
                 </div>
 
-                <!-- Pagination -->
-                <div class="swiper-pagination"></div>
+                <!-- Sual 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Niyə xəritə analizi etdirməliyəm? Bu mənə nə verəcək?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p> Xəritə analizi özünü kəşf etməyin ən qısa yoldur. Analiz sənə niyə eyni problemlərin təkrarlandığını, 
+                            münasibət və pul mövzularındakı çətinliklərin səbəblərini, daxili potensialını və doğru istiqaməti 
+                            aydın şəkildə göstərir. Bu məlumatlarla sən özünü daha dərindən tanıyır, artıq qərarlarını doğru şəkildə verirsən.</p>
+                    </div>
+                </div>
 
-                <!-- Navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <!-- Sual 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Karmik xəritə analizi ilə taleyim dəyişə bilərmi?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p> Karmik xəritə analizi sizin taleyinizi dəyişmir, onu anlamağa və daha doğru qərarlar verməyə kömək edir. 
+                            Həyat yolunu anladıqdan sonra artıq nə etməli olduğunu bilirsən və daha şüurlu seçimlər edirsən. Gələcəyimiz
+                            bizim bu gün verdiyimiz şüurlu qərarlardan asılıdır. Əgər sən dəyişərsənsə, həyatın dəyişər.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sual 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Xəritə analizi üçün hansı məlumatlar lazımdır?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p> Analiz üçün sadəcə ad, soyad və doğum tarixinizi gün/ ay/ il şəklində qeyd etməyiniz kifayətdir.</p>
+                    </div>
+                </div>
+
+                <!-- Sual 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Karmik dərs nə deməkdir və həyatımıza necə təsir edir?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p> Xəritədə gördüyümüz karmik dərslər cəza deyil, bu bizim üçün ruhsal və şəxsi inkişaf fürsətidir. 
+                            Bizim gizli kölgə tərəflərimizdir. Xəritədəki bu nöqtə, həyatınızın müəyyən sahələrində qarşınıza
+                            çıxan təkrarlanan çətinliklərin əsl səbəbini göstərir. Dərsi öyrənmək - döngünü qırmaqdır. Beləliklə,
+                            insan daha güclü versiyasına çevrilərək həyatını daha müsbət və fərqində olaraq yaşayır.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sual 6 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Münasibət analizi üçün hansı məlumatlar lazımdır və bu analizlə nələri öyrənmək olar?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Münasibət analizi üçün hər iki tərəfin doğum tarixi kifayətdir. Bu analiz partnyorlar
+                            arasındakı emosional və zehni uyğunluqdan tutmuş həyat tərzinə, sevgi dilinə, dəyərlər
+                            sisteminə və ortaq hədəflərə qədər münasibətin bir çox sahəsini əhatə edir. Anlaşmazlıqları
+                            çözmək, münasibətinizi daha şüurlu, xoşbəxt yaşamaq üçün istiqamət verən bir bələdçidir.</p>
+                    </div>
+                </div>
+
+                <!-- Sual 7 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Xəritə analizi pul və karyera mövzularında mənə necə kömək edə bilər?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Xəritə analizi sizin daxili potensialınızı üzə çıxararaq, maddi rifahınıza gedən ən qısa yolu
+                            göstərir. Bu analiz vasitəsilə sizə uğur gətirəcək peşə sahələrini və doğru ixtisas seçimini
+                            müəyyənləşdirə bilərsiniz. Eyni zamanda, pul axınında yaranan tıxanıqlıqların və maddi
+                            çətinliklərin səbəblərini aşkar edərək, gəlirlərinizi artırmağın yollarını kəşf edəcəksiniz.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sual 8 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Numeroloji seans müddəti nə qədərdir və hansı formatda keçirilir?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Numeroloji seans adətən 60–90 dəqiqə davam edir. Seans həm online (Zoom, WhatsApp), həm də
+                            üz-üzə formatda keçirilə bilər. Seans zamanı karmik xəritəniz ətraflı izah olunur,
+                            suallarınıza cavab verilir və şəxsi inkişaf üçün praktik tövsiyələr verilir. Səs yazısı
+                            daimi olaraq sizdə qalır. Seans zamanı paylaşdığınız bütün məlumatların konfidensiallığı tam
+                            şəkildə qorunur.</p>
+                    </div>
+                </div>
+
+                <!-- Sual 7 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Xəritə analizləri hansı sistem üzərindən aparılır?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Analizlər beynəlxalq səviyyədə tanınmış və təsdiqlənmiş numeroloji metodlar əsasında
+                            aparılır. Karmik xəritə sistemi Mariana Anael metodologiyasına əsaslanır və sizin fərdi
+                            rəqəmsal xəritənizi (matrisinizi) çıxarır. Seans zamanı xəritənizdəki göstəricilərin sizin
+                            xarakterinizə, həyat yolunuza necə təsir etdiyini addım-addım təhlil edirik. </p>
+                    </div>
+                </div>
+
+                <!-- Sual 8 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Numeroloji xəritədəki "Uğur sayı" nədir və həyatımıza necə təsir edir?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Uğur sayı - həyat yolunuzun müəyyən mərhələlərində çata biləcəyiniz ən yüksək nailiyyətləri və qarşınıza çıxacaq müsbət 
+                            hadisələri ifadə edir. Siz öz xəritənizi müsbət vibrasiyada yașadıqca, taleyinizdəki uğurlu fürsətləri daha asanlıqla 
+                            həyatınıza cəlb edirsiniz. Bunu fərdi xəritə analizi zamanı daha detallı öyrənirsiniz.</p>
+                    </div>
+                </div>
             </div>
-
         </div>
     </section>
 
-    <!-- Contact Section -->
+
+    <!-- ƏLAQƏ SEKSİYASI -->
     <section id="contact" class="contact">
         <div class="container">
             <h2>Əlaqə</h2>
             <div class="contact-content">
 
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
+                <!-- WhatsApp -->
+                <article class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
                     <div class="contact-details">
                         <h4>WhatsApp</h4>
-                        <span>+994 50 123 45 67</span>
+                        <a href="https://wa.me/994706242496" target="_blank" rel="noopener">
+                            +994 70 624 24 96
+                        </a>
                     </div>
-                </div>
-                <div class="contact-item">
+                </article>
+
+                <!-- Email -->
+                <article class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <div class="contact-details">
                         <h4>Email</h4>
-                        <span>info@menemaster.com</span>
+                        <a href="psychonumerology1@gmail.com">psychonumerology1@gmail.com</a>
                     </div>
-                </div>
-                <div class="contact-item">
+                </article>
+
+                <!-- Instagram -->
+                <article class="contact-item">
                     <i class="fab fa-instagram"></i>
                     <div class="contact-details">
                         <h4>Instagram</h4>
-                        <span>@mene_master_numbers</span>
+                        <a href="https://instagram.com/psychonumerology.az" target="_blank" rel="noopener">
+                            @psychonumerology.az
+                        </a>
                     </div>
-                </div>
-                <div class="contact-item">
+                </article>
+
+                <!-- Telegram -->
+                <article class="contact-item">
                     <i class="fab fa-telegram"></i>
                     <div class="contact-details">
                         <h4>Telegram</h4>
-                        <span>@MeneMaster</span>
+                        <a href="https://t.me/psychonumerology_az" target="_blank" rel="noopener">
+                            @psychonumerology_az
+                        </a>
                     </div>
-                </div>
-
+                </article>
 
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+
+                <!-- Haqqında -->
                 <div class="footer-section">
-                    <h3>Mene Master Of Numbers</h3>
-                    <p>Matrix numerologiyası və həyat kodları ilə gələcəyinizi kəşf edin. Peşəkar məsləhətçi xidmətləri
-                        və şəxsi konsultasiyalar.</p>
+                    <h3>Səidə Şabanova</h3>
+                    <p>
+                      Peşəkar xidmətlər və fərdi konsultasiyalarla öz həyat yolunuzu kəşf edin. Doğum xəritənizdəki şifrələri öyrənməklə həyatınızı dəyişin.
+                    </p>
                 </div>
+
+                <!-- Sosial Şəbəkələr -->
                 <div class="footer-section">
                     <h4>Sosial Şəbəkələr</h4>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com/psychonumerology.az" class="social-link" target="_blank"
+                            rel="noopener" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/994706242496" class="social-link" target="_blank" rel="noopener"
+                            aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://t.me/psychonumerology_az" class="social-link" target="_blank" rel="noopener"
+                            aria-label="Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
                     </div>
                 </div>
+
+                <!-- Xidmətlər -->
                 <div class="footer-section">
                     <h4>Xidmətlər</h4>
-                    <p><i class="fas fa-check"></i> Matrix Hesablama</p>
-                    <p><i class="fas fa-check"></i> Doğum Xəritəsi</p>
-                    <p><i class="fas fa-check"></i> Karyera Analizi</p>
-                    <p><i class="fas fa-check"></i> Münasibət Uyğunluğu</p>
+                    <ul class="footer-services">
+                        <li><i class="fas fa-check"></i> Karmik numerologiya analizi</li>
+                        <li><i class="fas fa-check"></i> Münasibət analizi</li>
+                        <li><i class="fas fa-check"></i> İllik proqnozun hesablanması</li>
+                        <li><i class="fas fa-check"></i> Pul və karyera analizi</li>
+                        <li><i class="fas fa-check"></i> Uşaqların numeroloji analizi</li>
+                    </ul>
                 </div>
+
+                <!-- Əlaqə -->
                 <div class="footer-section">
                     <h4>Əlaqə</h4>
-                    <p><i class="fas fa-phone"></i> +994 50 123 45 67</p>
-                    <p><i class="fas fa-envelope"></i> info@menemaster.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Bakı, Azərbaycan</p>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+994706242496">+994 70 624 24 96</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            Bakı, Azərbaycan
+                        </li>
+                       
+                    </ul>
                 </div>
+
             </div>
+
+            <!-- Copyright -->
             <div class="footer-bottom">
-                <p>&copy; 2024 Mene Master Of Numbers. Bütün hüquqlar qorunur.</p>
+                <p>
+                   Copyright &copy; 2026 Bütün hüquqlar qorunur. <br>
+                    <span>Elmar Guluzade</span> —
+                    <a href="https://www.linkedin.com/notifications/?filter=all" target="_blank">
+                        LinkedIn
+                    </a>
+                </p>
             </div>
         </div>
     </footer>
 
+    <!-- JavaScript Faylları -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 </body>
 
 </html>

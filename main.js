@@ -519,9 +519,9 @@ window.addEventListener('scroll', function() {
     
     // Add/remove background opacity based on scroll
     if (scrollTop > 50) {
-        navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
     } else {
-        navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
     }
     
     lastScrollTop = scrollTop;
@@ -608,4 +608,31 @@ const swiper = new Swiper('.certificates-swiper', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+});
+
+// ============================================
+// FAQ ACCORDION FUNKSİYASI
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            // Aktiv elementi tapırıq
+            const isActive = item.classList.contains('active');
+            
+            // Bütün açıq FAQ-ları bağlayırıq
+            faqItems.forEach(faq => {
+                faq.classList.remove('active');
+            });
+            
+            // Əgər kliklədiyin FAQ aktiv deyildisə, onu aç
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
 });
